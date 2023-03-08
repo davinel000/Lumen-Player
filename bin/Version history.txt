@@ -1,0 +1,84 @@
+11:15 23.01.2023
+10:32 07/03/2023
+
+version 1.5 what could be added:
+
+0. Concept:
+- including recording functions into player
+- optimizing performance (speed, size)
+- information modes (settings, algorithm)
+- two-screen and multi-screen options
+
+1. Recording module:
+DONE 12:46 10/02/2023 - menu button
+DONE 12:46 10/02/2023 - information in the menu (blinking, showing time counter of the recording session)
+- hotkey for starting the recording session
+DONE 14:00 17/03/2023 - proper naming - adding timestamp to the file recorded
+- selecting the folder for storing recorded files from Settings menu
+
+2. Basic information:
+
+3. Two-screen flexibility:
+- setting different resolution for 2 beamers (bottom alignment)
+
+4. Player options
+- previewing the video folder before toggling the mode on
+DONE 13:28 17/02/2023 - previewing the tagtool mode
+- option for changing Spout input
+- showing full filename text (ticker effect)
+
+5. Guidance for setting up the system by Urbanscreen
+- updating help for the installation
+- quick menu
+
+6. Mask Kantan post-module for the final image
+- button for opening/closing the module
+- button for toggling the mask
+
+7. Masking grid
+- selection between the cross and the grid
+DONE 13:03 23/01/2023 - setting the number of grid lines
+DONE 13:03 23/01/2023 - optimizing the grid performance (replicants->transform) 
+
+8. Minimizing number of Error signs
+DONE 12:45 13/02/2023 - debugging default folder for movie file-ins from the folders
+
+9. Settings:
+- change the tabs: 
+Player settings (folders, preview, mode displaying),
+Record settings (folder, format)
+Display (number of beamers, source resolution, beamer resolution, open as separate window), 
+Mapping (premask folder, premask color, mapping grid/cross, number of lines HV, color, postmask toggle, postmask open window)
+Hotkeys
+- simple settings, extended settings
+
+10. Guidlines/Setup Master
+- Set the resolution of the beamer
+- Set the resolution of the content
+- 
+
+11. Recorder:
+DONE 14:00 17/03/2023 - Timestamp on the recording - done
+DONE 14:00 17/03/2023 - displaying the record status
+- Selecting Folder for storing the recordings
+- Selecting Recorder settings in the specific menu
+
+
+12. Debugging
+DONE 15:16 13/02/2023 setting default playback folders if on startup the folder returns warning (useful for initial setup)
+
+13. Remaking stoner
+- solving the incorrect remapping
+- leaving only one stoner per sketch
+
+14. Multi-beamer support
+- make multiple beamers available and customizable (resolution)
+
+to research further:
+- storing and loading keystone settings in the separate image mapping mask
+- storing and loading settings in the JSON file
+- common trigger operator
+- switching the button controls from small menu to a centralized module
+- modularity - how differentiated should the modes be
+- introduction mode for the module
+- switching to GIT development infrastructure
