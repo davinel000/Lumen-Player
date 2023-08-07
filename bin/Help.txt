@@ -1,0 +1,80 @@
+{#grad(true)}{#color(255,0,0)}Lumen Player for Touchplayer
+{#grad(true)}by UrbanScreen
+
+Functions:
+- Displaying realtime images from TagTool
+- Previewing and playing videos and images from selected folders
+- Applying mask
+- Warping image 
+- Compact control panel
+
+General setup:
+- Both TagTool and Player can be opened with ausostart_lumen.cmd file (put correct shortcuts of TagTool and TouchPlayer in /bin/shortcuts)
+- TagTool should have the Spout session started for LumenPlayer to identify it in TagTool mode
+- For loading on startup put a shortcut of autostart_lumen.cmd into C:\Users\%USERNAME%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
+- The player is optimized for: 
+a) one-beamer layout (same Source and Beamer Resolution, no other screens)
+b) Screen-Beamer1-Beamer2 layout (check Display parameters)
+
+Hotkeys (Ctrl+):
+F1 - Tagtool mode
+F2 - Folder 1
+F3 - Folder 2
+F4 - Folder 3
+F5 - Black screen
+
+F6 - Toggle Mask
+F7 - Toggle Keystone
+F8 - Main or Left keystone setup
+F9 - Right keystone setup
+
+F10 - Help
+F11 - Open player
+F12 - Open settings
+
+
+Player:
+- contains 5 buttons for mode selection
+- within selected folder the previews can be seen and video can be selected
+
+
+Settings:
+- upper menu: keystone setup and toggle, mask
+- custom addresses for folders can be selected
+- fit format for images and video
+- file display limit in player (for optimization)
+- file sorting order
+- number of elements in row for preview
+- resolution and layout settings
+- toggle autosave when closing application (all parameters, recommended)
+- manual save
+
+
+Keystone:
+- provides keystone and grid wrapping instruments for image correction
+
+
+ver.1.4 (19.12.2022)
+for questions and bugs 
+write vromanov@hfk-bremen.de
+
+
+ver.1.4 (19.12.2022)
+for questions and bugs 
+write vromanov@hfk-bremen.de
+
+ver.1.4 (19.12.2022)
+for questions and bugs 
+write vromanov@hfk-bremen.de
+
+ver.1.4 (19.12.2022)
+for questions and bugs 
+write vromanov@hfk-bremen.de
+
+ver.1.4 (19.12.2022)
+for questions and bugs 
+write vromanov@hfk-bremen.de
+
+ver.1.4 (19.12.2022)
+for questions and bugs 
+write vromanov@hfk-bremen.de
