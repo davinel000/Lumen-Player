@@ -1,0 +1,52 @@
+warning: in the working copy of '.gitattributes', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.gitignore', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'LICENSE', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'README.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'autostart_lumen.cmd', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'autostart_tagtool.cmd', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'autostart_touchplayer.cmd', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'bin/Help.txt', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'bin/Version history.txt', LF will be replaced by CRLF the next time Git touches it
+[1mdiff --git a/Lumen_Player_5.toe b/Lumen_Player_5.toe[m
+[1mindex b709e5b..8288013 100644[m
+Binary files a/Lumen_Player_5.toe and b/Lumen_Player_5.toe differ
+[1mdiff --git a/README.md b/README.md[m
+[1mindex 471bf68..dcd0c1e 100644[m
+[1m--- a/README.md[m
+[1m+++ b/README.md[m
+[36m@@ -1,5 +1,2 @@[m
+ # Lumen-Player-New[m
+  An optimized version of the TouchDesigner sketch for multi-screen mapping of videos and spout content from TagTool[m
+[31m-[m
+[31m-[m
+[31m-TT is to be found in the folder https://u.pcloud.link/publink/show?code=kZHVxNVZKWMYKrh8iuJ1G95q6RGylfO9gEpX[m
+[1mdiff --git a/autostart_lumen.cmd b/autostart_lumen.cmd[m
+[1mindex a2a6290..a1c3e96 100644[m
+[1m--- a/autostart_lumen.cmd[m
+[1m+++ b/autostart_lumen.cmd[m
+[36m@@ -6,5 +6,5 @@[m [mstart "Autostart TagTool" "bin\shortcuts\TagTool_shortcut" "-s" "-h"[m
+ timeout /t 10[m
+ [m
+ echo "## START TouchDesigner ##"[m
+[31m-start "Autostart TouchPlayer" "bin\shortcuts\TouchPlayer_shortcut" "%~dp0\Lumen_Player_1.4ver1.toe"[m
+[32m+[m[32mstart "Autostart TouchPlayer" "bin\shortcuts\TouchPlayer_shortcut" "%~dp0\Lumen_Player_5.toe"[m
+ timeout /t 10[m
+\ No newline at end of file[m
+[1mdiff --git a/autostart_touchplayer.cmd b/autostart_touchplayer.cmd[m
+[1mindex 7a382ad..f6f990b 100644[m
+[1m--- a/autostart_touchplayer.cmd[m
+[1m+++ b/autostart_touchplayer.cmd[m
+[36m@@ -3,5 +3,5 @@[m
+ timeout  /t 1[m
+ [m
+ echo "## START TouchDesigner ##"[m
+[31m-start "Autostart TouchPlayer" "bin\shortcuts\TouchPlayer_shortcut" "%~dp0\Lumen_Player_1.4ver1.toe"[m
+[32m+[m[32mstart "Autostart TouchPlayer" "bin\shortcuts\TouchPlayer_shortcut" "%~dp0\Lumen_Player_5.toe"[m
+ timeout /t 10[m
+\ No newline at end of file[m
+[1mdiff --git a/bin/shortcuts/Tagtool_shortcut.lnk b/bin/shortcuts/Tagtool_shortcut.lnk[m
+[1mindex 7db162f..ac8c903 100644[m
+Binary files a/bin/shortcuts/Tagtool_shortcut.lnk and b/bin/shortcuts/Tagtool_shortcut.lnk differ
+[1mdiff --git a/bin/shortcuts/TouchPlayer_shortcut.lnk b/bin/shortcuts/TouchPlayer_shortcut.lnk[m
+[1mindex 2027549..f327cf5 100644[m
+Binary files a/bin/shortcuts/TouchPlayer_shortcut.lnk and b/bin/shortcuts/TouchPlayer_shortcut.lnk differ
