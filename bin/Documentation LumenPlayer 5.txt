@@ -1,0 +1,104 @@
+{#grad(true)}{#color(255,0,0)}Lumen Player 5
+{#grad(true)}by UrbanScreen
+
+Lumen Player is a TouchDesigner module for organizing communication between the TagTool software for creative collaboration and the mediaserver, recording and playing existing visual assets and managing the multi-projection setup (from 1 to 10 beamers, plus control screens). It is designed to be operated with TouchPlayer, without cutting off the necessary adjustments for setting up or daily use.
+
+List of functions:
+- Displaying realtime images from TagTool software using Spout in
+- Player: previewing, playing, removing videos and images from selected folders (3 folders available)
+- Recorder: recording videos from TagTool in a selected format and quality, with hotkey and recording indicator
+- Settings: customizing the folders to play files from or to record them to, customizable hotkeys
+- Multi-beamer mapping: setting up custom number of external screens to project the image, with masking options, different layouts, grid assistance, and externalized storage of warping settings. 
+- Compact control panel for accessing settings from a control screen
+
+Technical requirements:
+- Derivative TouchDesigner of a fresh version (2022+) installed (link)
+- Tagtool software installed (link)
+- PC with minimum 8GB RAM, and modern processor, depending on the number of screens connected
+- For painting with TagTool: IPad with TagTool installed, WLAN Router
+
+Setup process:
+Starting Lumen Player
+- Both TagTool and Player can be opened with ausostart_lumen.cmd file (put correct shortcuts of TagTool and TouchPlayer in /bin/shortcuts)
+
+- shortcuts in /bin/shortcuts folder
+- can be opened separately
+
+Setting up the 
+
+
+
+- TagTool should have the Spout session started for LumenPlayer to identify it in TagTool mode
+- The player is optimized for: 
+a) one-beamer layout (same Source and Beamer Resolution, no other screens)
+b) Screen-Beamer1-Beamer2 layout (check Display parameters)
+
+Instructions for setting up the Windows autostart:
+- registry control to override windows logon screen
+- adding file to windows startup
+For loading on startup put a shortcut of autostart_lumen.cmd into C:\Users\%USERNAME%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
+
+
+Default hotkeys (Ctrl+):
+F1 - Tagtool mode
+F2 - Folder 1
+F3 - Folder 2
+F4 - Folder 3
+F5 - Black screen
+
+F6 - Toggle Mask
+F7 - Toggle Keystone
+F8 - Mapping settings menu
+F9 - Start 
+
+F10 - Help
+F11 - Open player
+F12 - Open settings
+
+Ctrl+Shift+M - backup solution for opening Mapping settings menu
+
+Player:
+- contains 5 buttons for mode selection
+- within selected folder the previews can be seen and video can be selected
+
+
+Settings:
+- upper menu: keystone setup and toggle, mask
+- custom addresses for folders can be selected
+- fit format for images and video
+- file display limit in player (for optimization)
+- file sorting order
+- number of elements in row for preview
+- resolution and layout settings
+- toggle autosave when closing application (all parameters, recommended)
+- manual save
+
+
+Keystone:
+- provides keystone and grid wrapping instruments for image correction
+
+
+ver.1.4 (19.12.2022)
+for questions and bugs 
+write vromanov@hfk-bremen.de
+
+
+ver.1.4 (19.12.2022)
+for questions and bugs 
+write vromanov@hfk-bremen.de
+
+ver.1.4 (19.12.2022)
+for questions and bugs 
+write vromanov@hfk-bremen.de
+
+ver.1.4 (19.12.2022)
+for questions and bugs 
+write vromanov@hfk-bremen.de
+
+ver.1.4 (19.12.2022)
+for questions and bugs 
+write vromanov@hfk-bremen.de
+
+ver.1.4 (19.12.2022)
+for questions and bugs 
+write vromanov@hfk-bremen.de
