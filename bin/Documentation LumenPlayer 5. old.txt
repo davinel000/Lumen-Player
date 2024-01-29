@@ -1,0 +1,169 @@
+{#grad(true)}{#color(255,0,0)}Lumen Player 5
+{#grad(true)}by UrbanScreen
+
+
+Lumen Player is a TouchDesigner made module for organizing communication between the TagTool software for creative collaboration and the mediaserver, recording and playing existing visual assets and managing the multi-projection setup (from 1 to 10 beamers, plus control screens). It is designed to be operated with TouchPlayer, without cutting off the necessary adjustments for setting up or daily use.
+
+
+List of functions:
+- Displaying realtime images from TagTool software using Spout in
+- Player: previewing, playing, removing videos and images from selected folders (3 folders available)
+- Mask: using custom mask when projecting on architectural objects
+- Recorder: recording videos from TagTool in a selected format and quality, with hotkey and recording indicator
+- Settings: customizing the folders to play files from or to record them to, customizable hotkeys, masking
+- Multi-beamer mapping: setting up custom number of external screens to project the image, with masking options, different layouts, grid assistance, and externalized storage of warping settings. 
+- Optional compact control panel for accessing settings from a control screen
+
+Technical requirements:
+- Derivative TouchDesigner of a fresh version (2022+) installed (https://derivative.ca/download)
+- Tagtool software installed (https://www.tagtool.org/)
+- PC (Windows) with minimum 8GB RAM, and modern processor
+- Mouse and keyboard
+- For multiple screens: video card with the necessary number of outputs, and corresponding number of screens
+- For painting with TagTool: IPad with TagTool installed, WLAN Router
+
+
+
+
+Setup process:
+
+
+Downloading LumenPlayer
+- proceed to https://github.com/davinel000/Lumen-Player to get the latest version
+- you can download zip or clone the repo and put it where you need on your system
+
+
+Beamer Layout Setup
+
+- In Windows or (better) Nvidia Device Manager - set the proper screen grid that is suitable for your setup layout - line or a grid
+- Please be precise when setting the relative screen positions on your screen layout: the incorrect settings may result in the cut or incorrectly shown image.
+- if you are using a control screen (amonitor that is now showing the input image), set it to be left from all the screens in use (the default justification of projections is right-top, can be changed in the multibeamer settings)
+- If you have NVidia Quadro Video card, or another, with EDID profile functionality, it is highly essential to set them for the beamers use, and provide higher stability. 
+
+
+Setting up the TagTool
+- Download the latest TagTool (https://www.tagtool.org/). LumenPlayer 5 (Jan'24) is tested with TagTool 1.4.0 beta24. We recommend you to put the Tagtool Folder inside the LumenPlayer root folder (i.e. as a TagTool folder in the root)
+- For sending imagery from TagTool to LumenPlayer the Spout session should be activated. When started from autostart CMD file (check Shortcuts chapter below), it is activated by default
+- For setting canvas and output resolution go to Menu -> Graphics -> Canvas format
+- For connecting IPads: 1. Ensure you have the WLAN router with PC and IPads connected to the same network. 2. Start the new Session in TagTool: Network -> New Session -> Local Network
+
+
+Setting up the shortcuts and starting LumenPlayer
+Shortcut system is made for managing proper work of the LumenPlayer autostart function, it allows the .cmd files in the root folder work seamlessly.
+- for checking the shortcuts: go to bin/shortcuts and check if the shortcuts are opening the TagTool, TouchPlayer and TouchDesigner accordingly
+- if one of the shortcuts is not working, set the proper location in the File settings, or create the new shortcuts of the respective programs
+- Please keep the names of the shortcuts same: TouchDesigner_shortcut, Tagtool_shortcut, TouchPlayer_shortcut
+
+Starting the LumenPlayer
+- Both TagTool and Player will be opened with autostart_lumen.cmd file 
+- folders for putting the content will be created at first startup (they can be also changed in settings)
+- The apps can be also opened separately with autostart_touchplayer.cmd and autostart_tagtool.cmd
+
+Setting up Autostart of the Lumen Player on a PC
+- you need to ensure that the PC on startuup is overriding windows logon screen (you can do it in the Registry editor)
+- add the autostart_lumen.cmd shortcut (not the file) into C:\Users\%USERNAME%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup 
+
+
+
+
+Setting up the Multibeamer module
+Multibeamer module is designed to accumulate all the setting that are needed once the beamer layout is set up
+Extends the functionality of the TouchDesigner Stoner (versions of 2022) palette plugin - optimized for external projections storage, multiple keystoning, preview
+Provides keystone and grid wrapping instruments for image correction
+Is usually made once for the beamer setup
+
+1. Open the multibeamer parameters window (Ctrl+F8 by default)
+
+2. Creating Mapping Project
+Move to "New" Tab, enter the needed Project Pame, set Number of beamers used for your output, and press Create. The folder with settings and the tabs in the multibeamer module will be created. The message "project is ready to use" means you can continue the setup. The projection settings will be stored in the /mapping_settings folder
+
+3. Setting resolution and beamer layout
+Go to the Res Tab, set the resolutin: 
+- Fit to resolution means the content you use will be fitted to the width and height you set here. Normally, the content resolution (TagTool, videos you use) should be the same as this. Fit parameter allows you to fit the original content according to your needs. Native resolution works when the content has the same width and height
+- Beamers in a ros parameter is a number of beamers in one line. If you have only one horizontal line of beamers, set this number to the total number of beamers you use. If you use grid layout, set it as a number of beamers in one line (i.e. 3, if you use 3x2 or 3x3 grid)
+- Beamer resolution is the parameter signifying the total width and height of your beamers layout. For example, if you use a line of 6 FHD beamers, it will be 11520x1080, for 3x2 grid, it will be 5760x2060). Normally, it should be the same as your input image resolution. 
+- Justify Horizontal and Vertical parameters mean that the input image will be justified in the specified position, regarding your system screen setup. By default, it is Right Top, meaning that if you have 6 beamers in line, and one control screen, the control screen should be in the left (and sometimes lower) than you line layout.
+
+4. Mask, Settings, Calibration
+Go to the General Tab
+- the project info displayse the main information about the number beamers you use, project name, folder and resolution.
+- Mapping controls allow you to toggle the mapping/warping
+- If you use a mask on the image toggle the Mask, you are using (select the file), as well as set the color for it. Keep in mind that the mask resolution should be the same as for the content you are using
+- if you need to calibrate the color on your beamers, toggle the Show calibration mode
+- the image in the lower part of the module displays the layout of the beamers, you can toggle Show Numbers to check the actual beamers position
+- While setting up Keystone and Warping you can Toggle full grid (set number of rows and cols, and the color for your needs), or show the Stoner grid
+
+5. Keystoning
+Go to B1-BN tabs, according to the beamer index
+- if you need to manually set the scale, translation and rotation of the beamer, you can check the Premapping transform Section. It is useful when your beamers significantly overlap
+- for keystoning press Open Stoner button. Use the keystoning or warping settings inside Stoner interface. You can use both Mouse and Keyboard for moving the points to have more precise controls
+- when you are done with keystoning one beamer, close the stoner window and press Save mapping. Initially, no mapping is being set inside the project folder, now it is saved.
+- Proceed with other beamer tabs
+- Don't forget to switch off the full grid/calibration/numbers when you are done.
+
+6. Opening previously saved mapping.
+If you need to open the previously created project, go to the "Open" Tab, press the + button, and select the folder with your previous project (it should contain the Beamer1-BeamerN folders), then press Load. The message "project is ready to use" means you can continue the setup 
+
+
+
+
+
+Operating Player Module (base hotkey Ctrl+F11)
+Player module is a video player tool (best optimized for HAP codec), is designed for everyday use when there is a need of switching between TagTool input, recording the videos from it or switching  between prerecorded content.
+
+Functions:
+- contains 5 buttons for mode selection: Tagtool mode (connects to SpOut coming from TagTool session), Folders 1-3, Dark screen
+- Show Tagool output for collaborative drawing and animation. If the output is not working, it will show the status message
+- Preview videos and file names in the folder selected
+- Play video from the folder: within selected folder the previews can be seen on mouse hover, the video in the corresponding folder can be selected (currently playing video is marked with a green indicator)
+- Remove option: the video can be removed from the folder by clicking right mouse button on it, and then left mouse click on the red cross. The removed videos will be moved in to the "removed" folder inside your playback folder.
+- Record Tagtool Video: button is available when the Tagtool mode is activated. During recording the file is stored in the TEMP folder, after finishing recording it is moved to a specified folder (By default, the content is saved in the Folder 1)
+- Toggle dark screen
+
+
+Operating Settings Module (base hotkey Ctrl+F12):
+
+- upper menu: keystone setup and toggle, mask
+- custom locations for video playback folders can be selected
+- fit format for images and video
+- file display limit in Player (for optimization)
+- file sorting order in Player
+- number of elements in row for preview in Player
+- resolution and layout settings
+- toggle autosave when closing application (all parameters and settings, aside the projection settings, recommended)
+- manual save of the sketch 
+
+
+
+Troubleshooting
+- Lumen Player doesn't start - check installed TouchPlayer, correct shortcuts, the latest TagTool in the Tagtool folder
+- TagTool outputs version error when starting: replace the current TagTool with the latest verstion from link
+- The image on the screens is not exactly matching their location
+- The image is not warped: check if the mapping is on (in Settings menu, or in the multibeamer module)
+- I see grid/calibration image/numbers on the screen instead of my content: check the corresponding toggles in the multibeamer module
+
+
+Default hotkeys (Ctrl+):
+F1 - Tagtool mode
+F2 - Folder 1
+F3 - Folder 2
+F4 - Folder 3
+F5 - Dark screen
+
+F6 - Toggle Mask
+F7 - Toggle Keystone
+F8 - Mapping settings menu
+F9 - Start 
+
+F10 - Help
+F11 - Open player
+F12 - Open settings
+
+Ctrl+Shift+M - backup solution for opening Mapping settings menu
+
+
+
+
+ver.5 (04.01.2023)
+for questions and bugs 
+write davinel000@gmail.com
